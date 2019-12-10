@@ -21,6 +21,22 @@
     text-transform: uppercase;
     letter-spacing: 5px;
     text-align: center;
+    white-space: pre-wrap;
+}
+
+.heading::after {
+    content: '';
+    width: 5px;
+    height: 55px;
+    background: #fff;
+    position: absolute;
+    animation: blinking 1s 3s infinite;
+}
+
+@keyframes blinking {
+    0% {background: #fff}
+    50% {background: transparent}
+    100% {background: #fff}
 }
 
 .cards-wrapper {
@@ -41,6 +57,23 @@
     align-items: center;
     justify-content: space-evenly;
     transition: transform .5s;
+}
+
+@keyframes cardAnim {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.card:nth-child(1) {
+    animation: cardAnim 2s 3s backwards;
+}
+
+.card:nth-child(2) {
+    animation: cardAnim 2s 3.5s backwards;
+}
+
+.card:nth-child(3) {
+    animation: cardAnim 2s 4s backwards;
 }
 
 .card:hover {
